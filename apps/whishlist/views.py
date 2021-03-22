@@ -2,13 +2,10 @@ from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from apps.account.models import User
+from django.contrib.auth.models import User
 from apps.catalogue.models import Product
-from apps.wishlist.models import Line, Wishlist
-from apps.wishlist.serializers import WishListSerializer, AddWishListSerializer, RemoveWishlistSerializer
-from apps.apiv1.home.utils import percentage
-from apps.apiv1.localeprice import localeprice, get_current_currency
-from apps.apiv1.currency.serializers import CurrencySerializer
+from apps.whishlist.models import Line, Wishlist
+from apps.whishlist.serializers import WishListSerializer, AddWishListSerializer, RemoveWishlistSerializer
 
 
 class AddWishListView(viewsets.ModelViewSet):
